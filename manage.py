@@ -8,11 +8,9 @@ from flask_script import Manager
 from app.main import create_app
 from app import blueprint
 
-# Imports models (automatically detected by db)
-from app.main.model import client
 
 # Call create_app (fichier main/__init__.py) to select right env - could be prod / dev / test
-app = create_app(os.getenv('UFO_ENV') or 'dev')
+app = create_app(os.getenv('CLIENT_ENV') or 'dev')
 app.register_blueprint(blueprint)
 
 app.app_context().push()

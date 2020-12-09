@@ -11,8 +11,6 @@ RUN pip install -r requirements.txt
 
 RUN python manage.py db upgrade
 
-RUN python manage.py import_data
-
 EXPOSE 5000
 
 CMD ["python", "./manage.py", "run"]
